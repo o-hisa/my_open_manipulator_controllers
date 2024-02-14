@@ -1,0 +1,22 @@
+<library path="lib/libopen_manipulator_controllers">
+  <class name="open_manipulator_controllers/GravityCompensationController" type="open_manipulator_controllers::GravityCompensationController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      GravityCompensationController
+    </description>
+  </class>
+  <class name="open_manipulator_controllers/GrvCmpAndTrj" type="open_manipulator_controllers::GrvCmpAndTrj" base_class_type="controller_interface::ControllerBase">
+    <description>
+      GrvCmpAndTrj
+    </description>
+  </class>
+  <class name="open_manipulator_controllers/ForceControlBasedOnJointAngleController" type="open_manipulator_controllers::ForceControlBasedOnJointAngleController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      ForceControlBasedOnJointAngleController
+    </description>
+  </class>
+  <class name="open_manipulator_controllers/ForceControlBasedOnTipPositionController" type="open_manipulator_controllers::ForceControlBasedOnTipPositionController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      ForceControlBasedOnTipPositionController
+    </description>
+  </class>
+</library>

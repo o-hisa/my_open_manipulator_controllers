@@ -1,0 +1,66 @@
+[3.115s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/hisayuki/catkin_ws/src/open_manipulator_controls']
+[3.115s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], base_paths=['/home/hisayuki/catkin_ws/src/open_manipulator_controls'], build_base='build', ignore_user_meta=False, log_base=None, log_level=None, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f2bb6adaa30>>, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('list',), names_only=False, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, paths=None, paths_only=True, topological_graph=False, topological_graph_density=False, topological_graph_dot=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, topological_graph_legend=False, topological_order=False, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f2bb6adaa30>, verb_name='list', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f2bb6b4a370>)
+[3.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.224s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hisayuki/catkin_ws/src/open_manipulator_controls'
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['ignore', 'ignore_ament_install']
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'ignore'
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'ignore_ament_install'
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['colcon_pkg']
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'colcon_pkg'
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['colcon_meta']
+[3.224s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'colcon_meta'
+[3.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['ros']
+[3.225s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'ros'
+[3.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['cmake', 'python']
+[3.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'cmake'
+[3.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'python'
+[3.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extensions ['python_setup_py']
+[3.246s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls) by extension 'python_setup_py'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/log) by extensions ['ignore', 'ignore_ament_install']
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/log) by extension 'ignore'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/log) ignored
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extensions ['ignore', 'ignore_ament_install']
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extension 'ignore'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extension 'ignore_ament_install'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extensions ['colcon_pkg']
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extension 'colcon_pkg'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extensions ['colcon_meta']
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extension 'colcon_meta'
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extensions ['ros']
+[3.247s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers) by extension 'ros'
+[3.249s] DEBUG:colcon.colcon_core.package_identification:Package '/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controllers' with type 'ros.catkin' and name 'open_manipulator_controllers'
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extensions ['ignore', 'ignore_ament_install']
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extension 'ignore'
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extension 'ignore_ament_install'
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extensions ['colcon_pkg']
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extension 'colcon_pkg'
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extensions ['colcon_meta']
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extension 'colcon_meta'
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extensions ['ros']
+[3.249s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls) by extension 'ros'
+[3.250s] DEBUG:colcon.colcon_core.package_identification:Package '/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_controls' with type 'ros.catkin' and name 'open_manipulator_controls'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extensions ['ignore', 'ignore_ament_install']
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extension 'ignore'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extension 'ignore_ament_install'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extensions ['colcon_pkg']
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extension 'colcon_pkg'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extensions ['colcon_meta']
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extension 'colcon_meta'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extensions ['ros']
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw) by extension 'ros'
+[3.250s] DEBUG:colcon.colcon_core.package_identification:Package '/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_hw' with type 'ros.catkin' and name 'open_manipulator_hw'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extension 'ignore'
+[3.250s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extension 'ignore_ament_install'
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extensions ['colcon_pkg']
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extension 'colcon_pkg'
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extensions ['colcon_meta']
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extension 'colcon_meta'
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extensions ['ros']
+[3.251s] Level 1:colcon.colcon_core.package_identification:_identify(/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config) by extension 'ros'
+[3.251s] DEBUG:colcon.colcon_core.package_identification:Package '/home/hisayuki/catkin_ws/src/open_manipulator_controls/open_manipulator_moveit_config' with type 'ros.catkin' and name 'open_manipulator_moveit_config'
+[3.251s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/hisayuki/ros2_ws/install/switching_power_sources_messages/include/**",
+                "/home/hisayuki/ros2_ws/install/dynamixel_workbench_toolbox/include/**",
+                "/home/hisayuki/ros2_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+                "/home/hisayuki/ros2_ws/install/dynamixel_sdk/include/**",
+                "/home/hisayuki/ros2_ws/install/avatank_vehicle_messages_ros2/include/**",
+                "/home/hisayuki/ros2_ws/install/avatank_plc_messages_ros2/include/**",
+                "/home/hisayuki/ros2_ws/install/avatank_battery_messages_ros2/include/**",
+                "/opt/ros/foxy/include/**",
+                "/opt/ros/noetic/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}
