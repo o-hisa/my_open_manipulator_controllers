@@ -126,10 +126,16 @@ bool ForceControlBasedOnTipPositionController::init(
   IK_solver_vel_.reset(new KDL::ChainIkSolverVel_pinv(kdl_chain_));
   IK_solver_pos_.reset(new KDL::ChainIkSolverPos_LMA(kdl_chain_));
 
+  // KDL::Frame start_pose(KDL::Rotation::RPY(0, 0, 0),
+  //                       KDL::Vector(0.00, 0.0, 0.25));
+  // KDL::Frame end_pose(KDL::Rotation::RPY(0, 0, 0),
+  //                     KDL::Vector(0.20, 0.0, 0.25));
+
   KDL::Frame start_pose(KDL::Rotation::RPY(0, 0, 0),
-                        KDL::Vector(0.00, 0.0, 0.25));
+                        KDL::Vector(0.167, 0.0, 0.05));
   KDL::Frame end_pose(KDL::Rotation::RPY(0, 0, 0),
-                      KDL::Vector(0.20, 0.0, 0.25));
+                      KDL::Vector(0.100, 0.0, 0.25));
+
   path_ = new KDL::Path_Line(
       start_pose, end_pose, new KDL::RotationalInterpolation_SingleAxis(), 0.5);
   velpref_ = new KDL::VelocityProfile_Trap(0.01, 0.01);
@@ -139,7 +145,7 @@ bool ForceControlBasedOnTipPositionController::init(
   ctraj_->Add(traj_);
   ctraj_->Add(new KDL::Trajectory_Stationary(
       1.0, KDL::Frame(KDL::Rotation::RPY(0.0, 0.0, 0.0),
-                      KDL::Vector(0.20, 0, 0.25))));
+                      KDL::Vector(0.100, 0.0, 0.25))));
 
   moving_start_time_ = ros::Time::now().toSec();
   return true;
@@ -253,6 +259,10 @@ void ForceControlBasedOnTipPositionController::update(
   r(1) = current_pose_.p.y();
   r(2) = current_pose_.p.z();
   current_pose_.M.GetEulerZYX(r(3), r(4), r(5));
+  // printf("r:\n");
+  // printf("%lf\n", r(0));
+  // printf("%lf\n", r(1));
+  // printf("%lf\n", r(2));
 
   KDL::Jacobian jac_dot_q(4);
   KDL::Jacobian jac_q(4);
@@ -282,32 +292,49 @@ void ForceControlBasedOnTipPositionController::update(
   Eigen::Matrix<double, 4, 6> Jtrans = J.transpose();
 
   // setting parameters
-  Eigen::Matrix<double, 6, 1> K_dist;
-  // K_dist(0, 0) = 100;
-  // K_dist(1, 0) = 100;
-  // K_dist(2, 0) = 100;
-  // K_dist(3, 0) = 10;
-  // K_dist(4, 0) = 10;
-  // K_dist(5, 0) = 10;
+  Eigen::Matrix<double, 6, 1> K_dist, D_dist;
+  // 制御周期が16msec
+  // パラメータによる暴走(目標位置の発散)が発生しやすい
   K_dist(0, 0) = 200.0;
   K_dist(1, 0) = 200.0;
   K_dist(2, 0) = 200.0;
   K_dist(3, 0) = 0.0;
   K_dist(4, 0) = 0.0;
   K_dist(5, 0) = 0.0;
-  Eigen::Matrix<double, 6, 1> D_dist;
-  D_dist(0, 0) = 0;
-  D_dist(1, 0) = 0;
-  D_dist(2, 0) = 0;
+  D_dist(0, 0) = 1;
+  D_dist(1, 0) = 1;
+  D_dist(2, 0) = 1;
   D_dist(3, 0) = 0;
   D_dist(4, 0) = 0;
   D_dist(5, 0) = 0;
-  // D_dist(0, 0) = 2.0;
-  // D_dist(1, 0) = 2.0;
-  // D_dist(2, 0) = 2.0;
-  // D_dist(3, 0) = 1.0;
-  // D_dist(4, 0) = 1.0;
-  // D_dist(5, 0) = 1.0;
+
+  // // 制御周期が1msec, 強め
+  // K_dist(0, 0) = 700.0;
+  // K_dist(1, 0) = 700.0;
+  // K_dist(2, 0) = 700.0;
+  // K_dist(3, 0) = 5.0;
+  // K_dist(4, 0) = 5.0;
+  // K_dist(5, 0) = 5.0;
+  // D_dist(0, 0) = 10;
+  // D_dist(1, 0) = 10;
+  // D_dist(2, 0) = 10;
+  // D_dist(3, 0) = 0;
+  // D_dist(4, 0) = 0;
+  // D_dist(5, 0) = 0;
+
+  // // 制御周期が1msec, 弱め
+  // K_dist(0, 0) = 200.0;
+  // K_dist(1, 0) = 200.0;
+  // K_dist(2, 0) = 200.0;
+  // K_dist(3, 0) = 0.0;
+  // K_dist(4, 0) = 0.0;
+  // K_dist(5, 0) = 0.0;
+  // D_dist(0, 0) = 2;
+  // D_dist(1, 0) = 2;
+  // D_dist(2, 0) = 2;
+  // D_dist(3, 0) = 0;
+  // D_dist(4, 0) = 0;
+  // D_dist(5, 0) = 0;
 
   // calculate tau(row:4, column:1)
   Eigen::Matrix<double, 4, 1> tau1 = -H * Jinv * J_dot * q_dot + C + G;

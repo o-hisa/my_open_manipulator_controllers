@@ -133,9 +133,9 @@ bool ForceControlBasedOnJointAngleController::init(
   // KDL::Frame end_pose(KDL::Rotation::RPY(0, 0, 0),
   //                     KDL::Vector(0.10, -0.1, 0.20));
   KDL::Frame start_pose(KDL::Rotation::RPY(0, 0, 0),
-                        KDL::Vector(-0.05, 0.0, 0.20));
+                        KDL::Vector(0.25, 0.0, 0.05));
   KDL::Frame end_pose(KDL::Rotation::RPY(0, 0, 0),
-                      KDL::Vector(0.05, 0.0, 0.20));
+                      KDL::Vector(0.15, 0.0, 0.25));
   path_ = new KDL::Path_Line(
       start_pose, end_pose, new KDL::RotationalInterpolation_SingleAxis(), 0.5);
   velpref_ = new KDL::VelocityProfile_Trap(0.01, 0.01);
@@ -145,7 +145,7 @@ bool ForceControlBasedOnJointAngleController::init(
   ctraj_->Add(traj_);
   ctraj_->Add(new KDL::Trajectory_Stationary(
       1.0, KDL::Frame(KDL::Rotation::RPY(0.0, 0.0, 0.0),
-                      KDL::Vector(0.05, 0, 0.20))));
+                      KDL::Vector(0.15, 0.0, 0.25))));
 
   moving_start_time_ = ros::Time::now().toSec();
   return true;
@@ -164,8 +164,8 @@ void ForceControlBasedOnJointAngleController::starting(const ros::Time& time) {}
 
 void ForceControlBasedOnJointAngleController::update(
     const ros::Time& time, const ros::Duration& period) {
-  printf("time: %f\n", time.toSec());
-  printf("period: %f\n", period.toSec());
+  // printf("time: %f\n", time.toSec());
+  // printf("period: %f\n", period.toSec());
 
   // Get the current joint positions
   for (size_t i = 0; i < kdl_chain_.getNrOfJoints(); i++) {
@@ -207,8 +207,13 @@ void ForceControlBasedOnJointAngleController::update(
       svd.matrixV() * s.asDiagonal() * svd.matrixU().transpose();
 
   // const double kp = 250;
+  // 制御周期1msec
   const double kp = 2000;
   const double kv = 20;
+
+  // 制御周期16msec, 適切なパラメータが見つからなかった
+  // const double kp = 1000;  // 2000;
+  // const double kv = 2.0;   // 20;
 
   KDL::JntArray dest;
   dest.resize(kdl_chain_.getNrOfJoints());
@@ -246,7 +251,7 @@ void ForceControlBasedOnJointAngleController::update(
 
   // Set effort command
   for (size_t i = 0; i < kdl_chain_.getNrOfJoints(); i++) {
-    // effort_joint_handles_[i].setCommand(tau_(i));
+    effort_joint_handles_[i].setCommand(tau_(i));
   }
 }  // namespace open_manipulator_controllers
 
